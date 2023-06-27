@@ -9,15 +9,15 @@ package Roti;
  *
  * @author user
  */
-public abstract class Dough {
+public abstract class Dough extends TotalWeight {
     protected int Tepung = 40000;
     protected int Gula = 25000;
     protected int Butter = 23000;
     protected int Ragi = 5000;
     protected int SusuBubuk = 39000;
     protected int SusuCair = 24000;
-    int Telur = 23000;
-    int EsBatu = 2000;
+    protected int Telur = 23000;
+    protected int EsBatu = 2000;
     
     abstract int ragi();
     abstract int gula();
@@ -27,6 +27,4 @@ public abstract class Dough {
     abstract int susuCair();
     abstract int telur();
     abstract int esBatu();
-
-    
 }

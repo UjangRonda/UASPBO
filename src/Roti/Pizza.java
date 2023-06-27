@@ -149,43 +149,71 @@ public class Pizza extends Dough implements interfaces{
     
     
         //Kalkulasi berat setiap bahan yang digunakan untuk memenuhi orderan
-    public int totalAdonan(){
+    @Override
+    protected int totalAdonan(){
         return this.totalPizza() ;
     }
-    public int totalButter(){
+    @Override
+    protected int totalButter(){
         return this.butter() * this.totalAdonan();
     }
-    public int totalGula(){
+    @Override
+    protected int totalGula(){
         return this.gula()* this.totalAdonan();
     }
-    public int totalTepung(){
+    @Override
+    protected int totalTepung(){
         return this.tepung()* this.totalAdonan();
     }
-    public int totalTelur(){
+    @Override
+    protected int totalTelur(){
         return this.telur()* this.totalAdonan();
     }
-    public int totalRagi(){
+    @Override
+    protected int totalRagi(){
         return this.ragi()* this.totalAdonan();
     }
-    public int totalSusuBubuk(){
+    @Override
+    protected int totalSusuBubuk(){
         return this.susuBubuk()* this.totalAdonan();
     }
-    public int totalSusuCair(){
+    @Override
+    protected int totalSusuCair(){
         return this.susuCair() * this.totalAdonan();
     }
-    public int totalEsBatu(){
+    @Override
+    protected int totalEsBatu(){
         return this.esBatu()* this.totalAdonan();
     }
-    public int totalKeju(){
+    @Override
+    protected int totalKeju(){
         return this.Keju * this.pcs;
     }
+    @Override
     public int totalBawangbombay(){
         return this.BawangBombay * this.pcs;
     }
+    @Override
     public int totalSmokedbeef(){
         return this.SmokedBeef * this.pcs;
     }
+    @Override
     public int totalSosis(){
         return this.Sosis * this.pcs;
+    }
+
+    @Override
+    protected int totalCoklat() {
+        return 0;
+    }
+
+    @Override
+    protected int totalRedBean() {
+        return 0;
+    }
+
+    @Override
+    protected int totalVanilla() {
+        return 0;
     }
 }

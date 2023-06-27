@@ -197,7 +197,7 @@ public class RotiManis extends Dough implements interfaces {
     }
     // Kalkulasi modal filling varian 2
     public int calcFillingVar2(){
-        return (this.calcredBean(10) * this.calcvanilla(5)) * this.Varian2pcs;
+        return (this.calcredBean(10) + this.calcvanilla(5)) * this.Varian2pcs;
     }
     //Kalkulasi per pcs yang seharusnya digunakan untuk memenuhi margin profit 40%
     public double calcRotiManisVar2PerPcs(){
@@ -228,46 +228,70 @@ public class RotiManis extends Dough implements interfaces {
     
     
     //Kalkulasi berat setiap bahan yang digunakan untuk memenuhi orderan
-    public int totalAdonan(){
+    @Override
+    protected int totalAdonan(){
         return this.totalRotiManispcsVar1() + this.totalRotiManispcsVar2() + this.totalRotiManispcsVar3();
     }
-    public int totalButter(){
+    @Override
+    protected int totalButter(){
         return this.butter() * this.totalAdonan();
     }
-    public int totalGula(){
+    @Override
+    protected int totalGula(){
         return this.gula()* this.totalAdonan();
     }
-    public int totalTepung(){
+    @Override
+    protected int totalTepung(){
         return this.tepung()* this.totalAdonan();
     }
-    public int totalTelur(){
+    @Override
+    protected int totalTelur(){
         return this.telur()* this.totalAdonan();
     }
-    public int totalRagi(){
+    @Override
+    protected int totalRagi(){
         return this.ragi()* this.totalAdonan();
     }
-    public int totalSusuBubuk(){
+    @Override
+    protected int totalSusuBubuk(){
         return this.susuBubuk()* this.totalAdonan();
     }
-    public int totalSusuCair(){
+    @Override
+    protected int totalSusuCair(){
         return this.susuCair() * this.totalAdonan();
     }
-    public int totalEsBatu(){
+    @Override
+    protected int totalEsBatu(){
         return this.esBatu()* this.totalAdonan();
     }
-    public int totalKeju(){
+    @Override
+    protected int totalKeju(){
         return this.calcWeightKeju(5) * this.totalRotiManispcsVar1() + this.calcWeightKeju(10) * this.totalRotiManispcsVar3();
     }
-    public int totalCoklat(){
+    @Override
+    protected int totalCoklat(){
         return this.calcWeightCoklat(5) * this.totalRotiManispcsVar1();
     }
-    public int totalRedBean(){
+    @Override
+    protected int totalRedBean(){
         return this.calcWeightRedBean(10) * this.totalRotiManispcsVar2();
     }
-    public int totalVanilla(){
+    @Override
+    protected int totalVanilla(){
         return this.calcweightVanilla(5) * this.totalRotiManispcsVar2();
     }
-    public int totalSosis(){
+    @Override
+    protected int totalSosis(){
         return this.calcweightSosis(10) * this.totalRotiManispcsVar3();
+    }
+
+    @Override
+    protected int totalBawangbombay() {
+        return 0;
+    }
+
+    @Override
+    protected int totalSmokedbeef() {
+        return 0;
     }
 }
